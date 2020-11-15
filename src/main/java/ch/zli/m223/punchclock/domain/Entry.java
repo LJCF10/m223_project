@@ -25,6 +25,18 @@ public class Entry {
     @Column(nullable = false)
     private LocalDateTime checkOut;
 
+    @JoinColumn(nullable = false)
+    @ManyToOne
+    private User user;
+
+    @JoinColumn(nullable = false)
+    @ManyToOne
+    private Category category;
+
+    @JoinColumn(nullable = false)
+    @ManyToOne
+    private Room room;
+
     public Long getId() {
         return id;
     }
@@ -48,4 +60,29 @@ public class Entry {
     public void setCheckOut(LocalDateTime checkOut) {
         this.checkOut = checkOut;
     }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    public Room getRoom() {
+        return room;
+    }
+
+    public void setRoom(Room room) {
+        this.room = room;
+    }
+
 }
