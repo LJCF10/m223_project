@@ -5,6 +5,7 @@ import ch.zli.m223.punchclock.repository.RoomRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class RoomService {
@@ -14,15 +15,15 @@ public class RoomService {
         this.roomRepository = roomRepository;
     }
 
-    public Entry createRoom(Room room) {
+    public Room createRoom(Room room) {
         return roomRepository.saveAndFlush(room);
     }
 
-    public List<Entry> findAll() {
+    public List<Room> findAll() {
         return roomRepository.findAll();
     }
 
-    public Entry findById(long id){
+    public Optional<Room> findById(long id){
         return roomRepository.findById(id);
     }
 
@@ -30,7 +31,7 @@ public class RoomService {
         roomRepository.deleteById(id);
     }
 
-    public Entry updateRoom(Room room){
+    public Room updateRoom(Room room){
         return roomRepository.save(room);
     }
 }

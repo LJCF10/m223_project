@@ -5,6 +5,7 @@ import ch.zli.m223.punchclock.repository.CategoryRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CategoryService {
@@ -14,15 +15,15 @@ public class CategoryService {
         this.categoryRepository = categoryRepository;
     }
 
-    public Entry createCategory(Category category) {
+    public Category createCategory(Category category) {
         return categoryRepository.saveAndFlush(category);
     }
 
-    public List<Entry> findAll() {
+    public List<Category> findAll() {
         return categoryRepository.findAll();
     }
 
-    public Entry findById(long id){
+    public Optional<Category> findById(long id){
         return categoryRepository.findById(id);
     }
 
@@ -30,7 +31,7 @@ public class CategoryService {
         categoryRepository.deleteById(id);
     }
 
-    public Entry updateCategory(Category category){
+    public Category updateCategory(Category category){
         return categoryRepository.save(category);
     }
 }

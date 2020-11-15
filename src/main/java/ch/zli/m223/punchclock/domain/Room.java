@@ -1,12 +1,7 @@
 package ch.zli.m223.punchclock.domain;
 
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
-import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
-
 import javax.persistence.*;
-import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 public class Room {
@@ -22,7 +17,7 @@ public class Room {
     private String usage;
 
     @OneToMany
-    private List<entry> entries;
+    private List<Entry> entries;
 
     public Long getId() {
         return id;

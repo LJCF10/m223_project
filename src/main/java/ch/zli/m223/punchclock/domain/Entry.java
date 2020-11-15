@@ -61,12 +61,12 @@ public class Entry {
         this.checkOut = checkOut;
     }
 
-    public ApplicationUser getUser() {
+    public User getUser() {
         return user;
     }
 
-    public void setUser(ApplicationUser User) {
-        this.user = User;
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public Category getCategory() {
